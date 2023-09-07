@@ -1,0 +1,8 @@
+apps:
+    # App Sales
+    sales: Sales
+tabs:
+    # Tab Leads
+    leads: Leads
+    # Tab Tasks
+    tasks: Tasks

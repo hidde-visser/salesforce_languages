@@ -9,7 +9,7 @@ Library                         DateTime
 ${BROWSER}                      chrome
 
 ${username}                     hvisser@copado.com.crt
-${login_url}                    https://slockard-dev-ed.lightning.force.com/
+${login_url}                    ${url}
 ${home_url}                     ${login_url}/lightning/page/home
 ${applauncher}                  //*[contains(@class, "appLauncher")]
 

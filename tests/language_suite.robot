@@ -1,10 +1,9 @@
 *** Settings ***
 Library           QForce
-Library           pyyaml
 
 Resource          ../resources/common.robot
 Resource          ../resources/locators.robot
-Variables         ../locators/english.yaml
+Variables         ../resources/english.yaml
 Suite Setup       Setup Browser
 Suite Teardown    End suite
 

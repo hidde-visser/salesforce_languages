@@ -11,7 +11,8 @@ Suite Teardown    End suite
 Fresh Start
     Login
     LaunchApp     ${apps.sales}
-    ClickText     ${locator_leads}
+    ClickText     ${tabs.leads}
+    ClickText     ${leads.new_lead}
     ClickText     ${locator_new_lead}
     UseModal      On
     PickList      ${locator_salutation}

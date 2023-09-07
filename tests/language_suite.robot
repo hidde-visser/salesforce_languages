@@ -3,9 +3,12 @@ Library           QForce
 
 Resource          ../resources/common.robot
 Resource          ../resources/locators.robot
-Variables         ../resources/english.yaml
+Variables         ../resources/{language}.yaml
 Suite Setup       Setup Browser
 Suite Teardown    End suite
+
+*** Variables ***
+${leads.new_lead}
 
 *** Test Cases ***
 Fresh Start
@@ -13,7 +16,7 @@ Fresh Start
     LaunchApp     ${apps.sales}
     ClickText     ${tabs.leads}
     ClickText     ${leads.new_lead}
-    ClickText     ${locator_new_lead}
     UseModal      On
+    
     PickList      ${locator_salutation}
 

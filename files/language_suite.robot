@@ -1,0 +1,10 @@
+*** Settings ***
+Library                QForce
+
+Resource               ../resources/common.robot
+Suite Setup            Setup Browser
+Suite Teardown         End suite
+
+*** Test Cases ***
+Fresh Start
+    Cleanup

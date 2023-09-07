@@ -7,4 +7,4 @@ Suite Teardown         End suite
 
 *** Test Cases ***
 Fresh Start
-    Cleanup
+    Home

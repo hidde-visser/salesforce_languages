@@ -13,15 +13,6 @@ ${login_url}                    https://slockard-dev-ed.lightning.force.com/
 ${home_url}                     ${login_url}/lightning/page/home
 ${applauncher}                  //*[contains(@class, "appLauncher")]
 
-${company}                      ExampleCorp
-${accountName}                  ExamplaryBranch
-${first}                        Demo
-${last}                         McTest
-${email}                        DTest@test.test
-${phone}                        1234567890
-
-${demoFirst}                    Marty
-${demoLast}                     McFly
 
 *** Keywords ***
 Setup Browser
@@ -31,38 +22,9 @@ Setup Browser
     SetConfig                   LineBreak                   ${EMPTY}                    #\ue000
     SetConfig                   DefaultTimeout              20s                         #sometimes salesforce is slow
     SetConfig                   CaseInsensitive             True
-Form Fill
-    [Documentation]             This requests a demo
-    TypeText                    First Name*                 Marty
-    TypeText                    Last Name*                  McFly
-    TypeText                    Business Email*             delorean88@copado.com
-    TypeText                    Phone*                      1234567890
-    TypeText                    Company*                    Copado
-    TypeText                    Job Title*                  Sales Engineer
-    DropDown                    Country                     United States
+
 End suite
     Close All Browsers
-
-Form fill demo
-    TypeText                   First Name*                 Marty
-    TypeText                   Last Name*                  McFly
-    TypeText                   Business Email*             delorean88@copado.com
-    TypeText                   Phone*                      1234567890
-    TypeText                   Company*                    Copado
-    DropDown                   Employee Size*              1-2,500
-    TypeText                   Job Title*                  Sales Engineer
-    DropDown                   Country                     Netherlands
-
-Form Fill Training
-    [Documentation]    This keyword was generated during the training and can be used to fill in the form on the copado website
-    TypeText                   First Name*                 Marty
-    TypeText                   Last Name*                  McFly
-    TypeText                   Business Email*             delorean88@copado.com
-    TypeText                   Phone*                      1234567890
-    TypeText                   Company*                    Copado
-    DropDown                   Employee Size*              1-2,500
-    TypeText                   Job Title*                  Sales Engineer
-    DropDown                   Country                     Netherlands
 
 Login
     [Documentation]             Login to Salesforce instance
@@ -77,9 +39,6 @@ Login
         TypeSecret              Code                        ${mfa_code}
         ClickText               Verify
     END
-
-Setup       
-    GoTo                        ${login_url}lightning/setup/SetupOneHome/home
 
 Home
     [Documentation]             Navigate to homepage, login if needed
@@ -99,11 +58,6 @@ InsertRandomValue
     Set Library Search Order    QWeb
     ${testRandom}=              Generate Random String      ${charCount}
     TypeText                    ${field}                    ${prefix}${testRandom}${suffix}
-
-
-VerifyNoAccounts
-    VerifyNoText                ${accountName}              timeout=3
-
 
 DeleteData
     [Documentation]             RunBlock to remove all data until it doesn't exist anymore

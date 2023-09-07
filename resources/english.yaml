@@ -6,3 +6,5 @@ tabs:
     leads: Leads
     # Tab Tasks
     tasks: Tasks
+leads:
+    new_lead: New

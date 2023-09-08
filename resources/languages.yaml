@@ -37,9 +37,9 @@ nederlands:
         company: Bedrijf
         lead_status: Leadstatus
     profile:
-        settings: Settings
-        language_and_time_zone: Language & Time Zone
-        language: Language
+        settings: Instellingen
+        language_and_time_zone: Taal en tijdzone
+        language: Taal
     buttons:
         save: Opslaan
     home: Hoofdpagina

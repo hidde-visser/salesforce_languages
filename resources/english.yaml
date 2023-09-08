@@ -1,5 +1,5 @@
 english:
-    apps:
+    apps: test
         # App Sales
         sales: Sales
             tabs:

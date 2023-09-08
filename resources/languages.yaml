@@ -12,7 +12,6 @@ english:
         last_name: Last Name
         company: Company
         lead_status: Lead Status
-        save: Save
     profile:
         settings: Settings
         language_and_time_zone: Language & Time Zone

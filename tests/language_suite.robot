@@ -3,7 +3,7 @@ Library           QForce
 
 Resource          ../resources/common.robot
 Resource          ../resources/locators.robot
-Variables         ../resources/English.yaml
+Variables         ../resources/english.yaml
 Suite Setup       Setup Browser
 Suite Teardown    End suite
 

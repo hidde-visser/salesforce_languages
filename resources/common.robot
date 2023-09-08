@@ -178,11 +178,11 @@ Determine language
     # ${fr_current_language}=     IsText                      Profiel weergeven
 
     IF                          '${nl_current_language}' == 'True'
-        ${current_language}     Set Variable                nederlands
+        ${current_language}     Set Variable                'nederlands'
     ELSE IF                     '${en_current_language}' == 'True'
-        ${current_language}     Set Variable                english
+        ${current_language}     Set Variable                'english'
     ELSE IF                     '${fr_current_language}' == 'True'
-        ${current_language}     Set Variable                french
+        ${current_language}     Set Variable                'french'
     END
     
-    [Return]                 ${current_language}   
+    [Return]                 ${current_language}

@@ -21,7 +21,8 @@ Fresh Start
     ${language}=     Set Variable                nederlands
     LaunchApp        ${${language}.app.sales}
     ClickText        ${${language}.tabs.leads}
-    ClickText        ${${language}.leads.new_leads}
+    ClickItemUntil   ${${language}.modal.new_lead}    ${${language}.leads.new_leads}
+    # ClickText        ${${language}.leads.new_leads}
     UseModal         On
     PickList         ${${language}.new_lead.salutation}                 Mr.
     TypeText         ${${language}.new_lead.first_name}                 Hidde

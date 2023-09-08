@@ -3,7 +3,7 @@ Library           QForce
 
 Resource          ../resources/common.robot
 Resource          ../resources/locators.robot
-Variables         ../resources/{language}.yaml
+Variables         ../resources/English.yaml
 Suite Setup       Setup Browser
 Suite Teardown    End suite
 
@@ -14,7 +14,7 @@ ${leads.new_lead}
 Fresh Start
     Login
     ${language}=    Set Variable    English
-    LaunchApp     ${${language}.apps.sales}
+    LaunchApp     ${English.apps.sales}
     ClickText     ${tabs.leads}
     ClickText     ${leads.new_lead}
     UseModal      On

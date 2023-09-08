@@ -46,7 +46,8 @@ Home
     GoTo                        ${home_url}
     ${login_status}=            IsText                      To access this page, you have to log in to Salesforce.                              5
     Run Keyword If              ${login_status}             Login
-    VerifyText                  Home
+
+    VerifyText                  ${${language}.app.sales}
 
 InsertRandomValue
     [Documentation]             This keyword accepts a character count, suffix, and prefix.
@@ -169,4 +170,17 @@ Determine and Set Language
         ${set_language}         Evaluate                    "${set_language}".capitalize()
         DropDown                ${${current_language}.profile.language}                 ${set_language}
         ClickText               ${${current_language}.buttons.save}
+    END
+
+Determine language
+    ${nl_current_language}=     IsText                      Profiel weergeven
+    ${en_current_language}=     IsText                      View profile
+    ${fr_current_language}=     IsText                      Profiel weergeven
+
+    IF                          '${nl_current_language}' == 'True'
+        ${current_language}     Set Suite Variable                nederlands
+    ELSE IF                     '${en_current_language}' == 'True'
+        ${current_language}     Set Suite Variable                english
+    ELSE IF                     '${fr_current_language}' == 'True'
+        ${current_language}     Set Suite Variable                french
     END

@@ -26,6 +26,7 @@ english:
 nederlands:
     app:
         sales: Verkoop
+        profile: Profiel weergeven
     tabs:
         leads: Leads
     leads:

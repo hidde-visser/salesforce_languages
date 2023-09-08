@@ -15,12 +15,7 @@ Fresh Start
     Login
 
     #Set the application language
-    
-    ClickText    View profile
-    ClickText    Settings
-    ClickText    Language & Time Zone
-    DropDown         Language                        Nederlands
-    ClickText        Save
+    Determine and Set Language    nederlands
 
     #Enter a lead
     ${language}=     Set Variable                nederlands

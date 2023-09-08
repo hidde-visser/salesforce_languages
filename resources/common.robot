@@ -161,10 +161,7 @@ Determine and Set Language
     ELSE IF                     '${fr_current_language}' == 'True'
         ${current_language}     Set Variable                french
     END
-
-    ${set_language}             Set Variable                nederlands
-
-
+    
     IF                          '${current_language}' != '${set_language}'
         ClickText               ${${current_language}.app.profile}
         ClickText               ${${current_language}.profile.settings}
@@ -173,6 +170,3 @@ Determine and Set Language
         DropDown                ${${current_language}.profile.language}                 ${set_language}
         ClickText               ${${current_language}.buttons.save}
     END
-
-    ${test}                     Set Variable                ${set_language}.capitalize()
-

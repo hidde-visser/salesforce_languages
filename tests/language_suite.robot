@@ -21,7 +21,10 @@ Fresh Start
     ${language}=     Set Variable                nederlands
     LaunchApp        ${${language}.app.sales}
     ClickText        ${${language}.tabs.leads}
-    ClickItemUntil   ${${language}.modal.new_lead}    ${${language}.leads.new_leads}
+    Sleep            1s
+    ClickText     ${${language}.leads.new_leads}
+    # ClickItemUntil   ${${language}.modal.new_lead}    
+    
     # ClickText        ${${language}.leads.new_leads}
     UseModal         On
     PickList         ${${language}.new_lead.salutation}                 Mr.
@@ -29,4 +32,4 @@ Fresh Start
     TypeText         ${${language}.new_lead.last_name}                  Visser
     TypeText         ${${language}.new_lead.company}                    Copado
     PickList         ${${language}.new_lead.lead_status}                Working - Contacted
-    ClickText        ${${language}.new_lead.save}                       partial_match=false
+    ClickText        ${${language}.buttons.save}                       partial_match=false

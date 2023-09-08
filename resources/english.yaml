@@ -3,3 +3,5 @@ english:
         sales: Sales
     tabs:
         leads: Leads
+    leads:
+        new_lead: New

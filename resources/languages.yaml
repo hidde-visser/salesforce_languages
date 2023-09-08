@@ -20,6 +20,7 @@ english:
     buttons:
         save: Save
     home: Home
+
 nederlands:
     app:
         sales: Verkoop

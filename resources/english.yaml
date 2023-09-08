@@ -14,30 +14,3 @@ english:
                           save: Save    
                 # Tab Tasks
                 tasks: Tasks         
-nederlands:
-    apps:
-        # App Sales
-        sales: Verkoop
-        tabs:
-            # Tab Leads
-            leads: Leads
-                new_lead: Nieuw
-                    salutation: Aanhef
-                    first_name: Voornaam
-                    last_name: Achternaam
-                    company: Bedrijf
-                    lead_status: Leadstatus
-                    save: Opslaan
-            # Tab Tasks
-            tasks: Taken         
-french:
-    apps:
-        # App Sales
-        sales: Sales
-        tabs:
-            # Tab Leads
-            leads: Leads
-            # Tab Tasks
-            tasks: Tasks
-            leads: Leads
-            new_lead: New

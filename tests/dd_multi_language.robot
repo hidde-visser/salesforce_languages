@@ -19,11 +19,7 @@ Example Test
     Login
 
     #Set the application language
-    ClickText    View profile
-    ClickText    Settings
-    ClickText    Language & Time Zone
-    DropDown         Language                        Nederlands
-    ClickText        Save
+    Determine and Set Language    ${language}
 
     #Enter a lead
     ${language}=     Set Variable                ${language}

@@ -15,6 +15,7 @@ Fresh Start
     Login
 
     #Set the application language
+    
     ClickText    View profile
     ClickText    Settings
     ClickText    Language & Time Zone

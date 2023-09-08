@@ -13,8 +13,7 @@ english:
                     lead_status: Lead Status
                     save: Save    
             # Tab Tasks
-            tasks: Tasks
-            
+            tasks: Tasks         
 nederlands:
     apps:
         # App Sales
@@ -30,8 +29,7 @@ nederlands:
                     lead_status: Leadstatus
                     save: Opslaan
             # Tab Tasks
-            tasks: Taken
-            
+            tasks: Taken         
 french:
     apps:
         # App Sales

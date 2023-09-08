@@ -46,7 +46,7 @@ Home
     GoTo                        ${home_url}
     ${login_status}=            IsText                      To access this page, you have to log in to Salesforce.                              5
     Run Keyword If              ${login_status}             Login
-
+    ${language}=                Determine language
     VerifyText                  ${${language}.app.home}
 
 InsertRandomValue
@@ -175,7 +175,7 @@ Determine and Set Language
 Determine language
     ${nl_current_language}=     IsText                      Profiel weergeven
     ${en_current_language}=     IsText                      View profile
-    ${fr_current_language}=     IsText                      Profiel weergeven
+    # ${fr_current_language}=     IsText                      Profiel weergeven
 
     IF                          '${nl_current_language}' == 'True'
         ${current_language}     Set Suite Variable                nederlands

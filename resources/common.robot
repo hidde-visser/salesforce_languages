@@ -3,6 +3,7 @@ Library                         QForce
 Library                         QWeb
 Library                         String
 Library                         DateTime
+Variables                       ../resources/languages.yaml
 
 
 *** Variables ***
@@ -42,8 +43,6 @@ Login
 
 Home
     [Documentation]             Navigate to homepage, login if needed
-    End suite
-    Setup Browser
     GoTo                        ${home_url}
     ${login_status}=            IsText                      To access this page, you have to log in to Salesforce.                              5
     Run Keyword If              ${login_status}             Login
@@ -150,7 +149,7 @@ Determine and Set Language
     ...                         ${set_language} is the to be set language
     [Arguments]                 ${set_language}
 
-    ${set_language}             Set Variable    nederlands
+    ${set_language}             Set Variable                nederlands
     ${nl_current_language}=     IsText                      Profiel weergeven
     ${en_current_language}=     IsText                      View profile
     ${fr_current_language}=     IsText                      Profiel weergeven
@@ -165,7 +164,7 @@ Determine and Set Language
 
     IF                          '${current_language}' != '${set_language}'
         ClickText               ${${current_language}.app.profile}
-        ClickText               ${${current_language}.profile.settings}    partial_match=false
+        ClickText               ${${current_language}.profile.settings}                 partial_match=false
         ClickText               ${${current_language}.profile.language_and_time_zone}
         ${set_language}         Evaluate                    "${set_language}".capitalize()
         DropDown                ${${current_language}.profile.language}                 ${set_language}

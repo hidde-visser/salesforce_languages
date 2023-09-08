@@ -13,7 +13,8 @@ ${leads.new_lead}
 *** Test Cases ***
 Fresh Start
     Login
-    LaunchApp     ${apps.sales}
+    ${language}=    Set Variable    English
+    LaunchApp     ${${language}.apps.sales}
     ClickText     ${tabs.leads}
     ClickText     ${leads.new_lead}
     UseModal      On

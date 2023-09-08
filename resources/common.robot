@@ -173,8 +173,8 @@ Determine and Set Language
     END
 
 Determine language
-    ${nl_current_language}=     IsText                      Profiel weergeven
-    ${en_current_language}=     IsText                      View profile
+    ${en_current_language}=     IsText                      View profile    timeout=5s 
+    ${nl_current_language}=     IsText                      Profiel weergeven   
     ${fr_current_language}=     IsText                      blah balh
 
     IF                          '${nl_current_language}' == 'True'

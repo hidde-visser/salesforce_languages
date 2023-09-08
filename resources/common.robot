@@ -143,3 +143,31 @@ Login As
     ClickText                   User                        anchor=${persona}           delay=5                     # wait for list to populate, then click
     VerifyText                  Freeze                      timeout=45                  # this is slow, needs longer timeout
     ClickText                   Login                       anchor=Freeze               delay=1
+
+Determine and Set Language
+    [Documentation]    This keyword is used to determine the current language
+    ...                And if required it will set the correct language for the test script
+    ...                ${set_language} is the to be set language
+    [Arguments]        ${set_language}
+    
+    ${nl_current_language}=    IsText    Profiel weergeven
+    ${en_current_language}=    IsText    Profiel weergeven
+    ${fr_current_language}=    IsText    Profiel weergeven
+    
+    IF    '${nl_current_language}' == 'True'
+        ${current_language}    Set Variable    nederlands
+    ELSE IF                    '${en_current_language}' == 'True'
+        ${current_language}    Set Variable    english
+    ELSE IF                    '${fr_current_language}' == 'True'
+        ${current_language}    Set Variable    french
+    END
+
+    IF    ${current_language} != ${set_language}
+        ClickText    ${${language}.app.profile}
+        ClickText    ${${language}.profile.language_and_time_zone}
+        ClickText    ${${language}.profile.language}
+        ClickText    ${${language}.buttons.save}
+    END
+    
+
+    

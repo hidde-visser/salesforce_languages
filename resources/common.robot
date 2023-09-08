@@ -150,7 +150,6 @@ Determine and Set Language
     ...                         ${set_language} is the to be set language
     [Arguments]                 ${set_language}
 
-    ${set_language}             Set Variable                nederlands
     ${nl_current_language}=     IsText                      Profiel weergeven
     ${en_current_language}=     IsText                      View profile
     ${fr_current_language}=     IsText                      Profiel weergeven

@@ -15,7 +15,7 @@ Fresh Start
     Login
     ${language}=    Set Variable    english
     LaunchApp     ${${language}.app.sales}
-    ClickText     ${${language}.sales.leads}
+    ClickText     ${${language}.tabs.leads}
     ClickText     ${${language}.leads.new_lead}
     UseModal      On
     PickList      ${locator_salutation}

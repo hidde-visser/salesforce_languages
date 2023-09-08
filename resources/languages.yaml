@@ -20,6 +20,8 @@ english:
     buttons:
         save: Save
     home: Home
+    modal:
+        new_lead: New Lead
 
 nederlands:
     app:
@@ -34,11 +36,12 @@ nederlands:
         last_name: Achternaam
         company: Bedrijf
         lead_status: Leadstatus
-        save: Opslaan
     profile:
         settings: Settings
         language_and_time_zone: Language & Time Zone
         language: Language
     buttons:
-        save: Save
+        save: Opslaan
     home: Hoofdpagina
+    modal:
+        new_lead: New Lead

@@ -16,7 +16,7 @@ Example Test with ${language} ${salutation} ${first_name}
 *** Keywords ***
 Example Test
     [Arguments]    ${language}    ${salutation}    ${first_name}    ${last_name}    ${company}    ${lead_status}
-    Login
+    Home
 
     #Set the application language
     Determine and Set Language    ${language}

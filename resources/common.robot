@@ -164,12 +164,15 @@ Determine and Set Language
 
     ${set_language}             Set Variable                nederlands
 
-    IF                          ${current_language} != ${set_language}
-        ClickText               ${${language}.app.profile}
-        ClickText               ${${language}.profile.language_and_time_zone}
-        ClickText               ${${language}.profile.language}
-        ClickText               ${${language}.buttons.save}
+
+    IF                          '${current_language}' != '${set_language}'
+        ClickText               ${${current_language}.app.profile}
+        ClickText               ${${current_language}.profile.settings}
+        ClickText               ${${current_language}.profile.language_and_time_zone}
+        ${set_language}         Evaluate                    "${set_language}".capitalize()
+        DropDown                ${${current_language}.profile.language}                 ${set_language}
+        ClickText               ${${current_language}.buttons.save}
     END
 
-
+    ${test}                     Set Variable                ${set_language}.capitalize()
 

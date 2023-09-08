@@ -1,16 +1,15 @@
 english:
-    apps: test
-        # App Sales
-        sales: Sales
-            tabs:
-                # Tab Leads
-                leads: Leads
-                    new_lead: New
-                        salutation: Salutation
-                        first_name: First Name
-                        last_name: Last Name
-                        company: Company
-                         lead_status: Lead Status
-                          save: Save    
-                # Tab Tasks
-                tasks: Tasks
+    # App Sales
+    sales: Sales
+        tabs:
+            # Tab Leads
+            leads: Leads
+                new_lead: New
+                    salutation: Salutation
+                    first_name: First Name
+                    last_name: Last Name
+                    company: Company
+                        lead_status: Lead Status
+                        save: Save    
+            # Tab Tasks
+            tasks: Tasks

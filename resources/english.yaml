@@ -1,5 +1,4 @@
-eng:
-    # App Sales
+app:
     sales: Sales
         tabs:
             # Tab Leads

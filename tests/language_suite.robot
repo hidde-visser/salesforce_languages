@@ -12,7 +12,7 @@ ${leads.new_lead}
 
 *** Test Cases ***
 Fresh Start
-    Login
+    Home
 
     #Set the application language
     Determine and Set Language    nederlands

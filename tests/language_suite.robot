@@ -3,7 +3,7 @@ Library              QForce
 
 Resource             ../resources/common.robot
 Resource             ../resources/locators.robot
-Variables            ../resources/english.yaml
+Variables            ../resources/languages.yaml
 Suite Setup          Setup Browser
 Suite Teardown       End suite
 
@@ -13,7 +13,7 @@ ${leads.new_lead}
 *** Test Cases ***
 Fresh Start
     Login
-    ${language}=     Set Variable                english
+    ${language}=     Set Variable                nederlands
     LaunchApp        ${${language}.app.sales}
     ClickText        ${${language}.tabs.leads}
     ClickText        ${${language}.leads.new_leads}

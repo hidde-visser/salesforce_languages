@@ -1,13 +1,14 @@
-apps:
-    # App Sales
-    sales: Sales
-    tabs:
-        # Tab Leads
-        leads: Leads
-        # Tab Tasks
-        tasks: Tasks
-        leads: Leads
-        new_lead: New    
+eng:
+    apps:
+        # App Sales
+        sales: Sales
+        tabs:
+            # Tab Leads
+            leads: Leads
+            # Tab Tasks
+            tasks: Tasks
+            leads: Leads
+            new_lead: New    
 Nederlands:
     apps:
         # App Sales

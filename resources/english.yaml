@@ -4,4 +4,11 @@ english:
     tabs:
         leads: Leads
     leads:
-        new_lead: New
+        new_leads: New
+    new_lead:
+        salutation: Salutation
+        first_name: First Name
+        last_name: Last Name
+        company: Company
+        lead_status: Lead Status
+        save: Save

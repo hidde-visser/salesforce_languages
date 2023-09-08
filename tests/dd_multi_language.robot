@@ -33,6 +33,6 @@ Example Test
     TypeText         ${${language}.new_lead.last_name}                  ${last_name}
     TypeText         ${${language}.new_lead.company}                    ${company}
     PickList         ${${language}.new_lead.lead_status}                ${lead_status}
-    ClickText        ${${language}.new_lead.save}                       partial_match=false
+    ClickText        ${${language}.buttons.save}                       partial_match=false
 
   

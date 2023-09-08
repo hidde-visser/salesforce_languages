@@ -18,7 +18,7 @@ ${applauncher}                  //*[contains(@class, "appLauncher")]
 Setup Browser
     Set Library Search Order    QWeb
     Evaluate                    random.seed()
-    Open Browser                about:blank                 ${BROWSER}    
+    Open Browser                about:blank                 ${BROWSER}
     SetConfig                   LineBreak                   ${EMPTY}                    #\ue000
     SetConfig                   DefaultTimeout              20s                         #sometimes salesforce is slow
     SetConfig                   CaseInsensitive             True
@@ -45,7 +45,7 @@ Home
     End suite
     Setup Browser
     GoTo                        ${home_url}
-    ${login_status}=            IsText                      To access this page, you have to log in to Salesforce.                 5
+    ${login_status}=            IsText                      To access this page, you have to log in to Salesforce.                              5
     Run Keyword If              ${login_status}             Login
     VerifyText                  Home
 
@@ -97,38 +97,38 @@ ExampleKey
 
 Login_with_another_user
     [Documentation]             Login to Salesforce instance
-    [Arguments]                 ${username}    ${password}
+    [Arguments]                 ${username}                 ${password}
     End suite
     Setup Browser
     GoTo                        ${login_url}
     TypeText                    Username                    ${username}
     TypeText                    Password                    ${password}
     ClickText                   Log In
-    ${isMFA}=                   IsText                      Login Approval Required        #Determines MFA is prompted
+    ${isMFA}=                   IsText                      Login Approval Required     #Determines MFA is prompted
     Log To Console              ${isMFA}
     IF                          ${isMFA}                    #Conditional Statement for if MFA verification is required to proceed
-        ${mfa_code}=            GetOTP                      ${username}                 ${secret_hidde}                ${password}
+        ${mfa_code}=            GetOTP                      ${username}                 ${secret_hidde}             ${password}
         TypeSecret              Code                        ${mfa_code}
         ClickText               Verify
     END
 
 Commonfunction
-    ClickText    Opportunities
-    ClickText    New
-    UseModal    On
-    ClickText    Complete this field.
-    TypeText     Close Date    12/1/2022
-    
-    ClickText    Complete this field.
-    TypeText    *Opportunity Name    Hidde BV
-    ClickText    Save    partial_match=False
-    PickList    *Stage    Prospecting
-    ClickText    Save    partial_match=False
-    UseModal    Off
+    ClickText                   Opportunities
+    ClickText                   New
+    UseModal                    On
+    ClickText                   Complete this field.
+    TypeText                    Close Date                  12/1/2022
 
-    ClickText    View profile
-    VerifyText    TEST ROBOT
-    ClickText    Log Out
+    ClickText                   Complete this field.
+    TypeText                    *Opportunity Name           Hidde BV
+    ClickText                   Save                        partial_match=False
+    PickList                    *Stage                      Prospecting
+    ClickText                   Save                        partial_match=False
+    UseModal                    Off
+
+    ClickText                   View profile
+    VerifyText                  TEST ROBOT
+    ClickText                   Log Out
 
 Login As
     [Documentation]             Login As different persona. User needs to be logged into Salesforce with Admin rights
@@ -145,29 +145,31 @@ Login As
     ClickText                   Login                       anchor=Freeze               delay=1
 
 Determine and Set Language
-    [Documentation]    This keyword is used to determine the current language
-    ...                And if required it will set the correct language for the test script
-    ...                ${set_language} is the to be set language
-    [Arguments]        ${set_language}
-    
-    ${nl_current_language}=    IsText    Profiel weergeven
-    ${en_current_language}=    IsText    Profiel weergeven
-    ${fr_current_language}=    IsText    Profiel weergeven
-    
-    IF    '${nl_current_language}' == 'True'
-        ${current_language}    Set Variable    nederlands
-    ELSE IF                    '${en_current_language}' == 'True'
-        ${current_language}    Set Variable    english
-    ELSE IF                    '${fr_current_language}' == 'True'
-        ${current_language}    Set Variable    french
+    [Documentation]             This keyword is used to determine the current language
+    ...                         And if required it will set the correct language for the test script
+    ...                         ${set_language} is the to be set language
+    [Arguments]                 ${set_language}
+
+    ${nl_current_language}=     IsText                      Profiel weergeven
+    ${en_current_language}=     IsText                      View profile
+    ${fr_current_language}=     IsText                      Profiel weergeven
+
+    IF                          '${nl_current_language}' == 'True'
+        ${current_language}     Set Variable                nederlands
+    ELSE IF                     '${en_current_language}' == 'True'
+        ${current_language}     Set Variable                english
+    ELSE IF                     '${fr_current_language}' == 'True'
+        ${current_language}     Set Variable                french
     END
 
-    IF    ${current_language} != ${set_language}
-        ClickText    ${${language}.app.profile}
-        ClickText    ${${language}.profile.language_and_time_zone}
-        ClickText    ${${language}.profile.language}
-        ClickText    ${${language}.buttons.save}
-    END
-    
+    ${set_language}             Set Variable                nederlands
 
-    
+    IF                          ${current_language} != ${set_language}
+        ClickText               ${${language}.app.profile}
+        ClickText               ${${language}.profile.language_and_time_zone}
+        ClickText               ${${language}.profile.language}
+        ClickText               ${${language}.buttons.save}
+    END
+
+
+

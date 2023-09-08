@@ -1,5 +1,3 @@
 english:
-  app:
-    sales: Sales
-      tabs:
-        leads: Leads
+    app:
+        sales: Sales

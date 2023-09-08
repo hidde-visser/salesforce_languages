@@ -14,7 +14,7 @@ ${leads.new_lead}
 Fresh Start
     Login
     ${language}=    Set Variable    english
-    LaunchApp     ${${language}.apps.sales}
+    LaunchApp     ${english.apps.sales}
     ClickText     ${${language}.tabs.leads}
     ClickText     ${${language}.leads.new_lead}
     UseModal      On

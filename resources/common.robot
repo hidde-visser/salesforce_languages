@@ -184,3 +184,5 @@ Determine language
     ELSE IF                     '${fr_current_language}' == 'True'
         ${current_language}     Set Suite Variable                french
     END
+    
+    [Return]                 ${current_language}   

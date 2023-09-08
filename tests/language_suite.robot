@@ -13,6 +13,15 @@ ${leads.new_lead}
 *** Test Cases ***
 Fresh Start
     Login
+
+    #Set the application language
+    ClickText    View profile
+    ClickText    Settings
+    ClickText    Language & Time Zone
+    DropDown         Language                        Nederlands
+    ClickText        Save
+
+    #Enter a lead
     ${language}=     Set Variable                nederlands
     LaunchApp        ${${language}.app.sales}
     ClickText        ${${language}.tabs.leads}

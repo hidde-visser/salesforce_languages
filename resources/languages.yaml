@@ -1,6 +1,7 @@
 english:
     app:
         sales: Sales
+        profile: View profile
     tabs:
         leads: Leads
     leads:
@@ -11,6 +12,11 @@ english:
         last_name: Last Name
         company: Company
         lead_status: Lead Status
+        save: Save
+    profile:
+        language_and_time_zone: Language & Time Zone
+        language: Language
+    buttons:
         save: Save
 nederlands:
     app:

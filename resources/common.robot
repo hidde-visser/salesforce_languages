@@ -47,7 +47,7 @@ Home
     ${login_status}=            IsText                      To access this page, you have to log in to Salesforce.                              5
     Run Keyword If              ${login_status}             Login
 
-    VerifyText                  ${${language}.app.sales}
+    VerifyText                  ${${language}.app.home}
 
 InsertRandomValue
     [Documentation]             This keyword accepts a character count, suffix, and prefix.

@@ -19,6 +19,7 @@ english:
         language: Language
     buttons:
         save: Save
+    Home: Home
 nederlands:
     app:
         sales: Verkoop
@@ -33,3 +34,10 @@ nederlands:
         company: Bedrijf
         lead_status: Leadstatus
         save: Opslaan
+    profile:
+        settings: Settings
+        language_and_time_zone: Language & Time Zone
+        language: Language
+    buttons:
+        save: Save
+    Home: Hoofdpagina

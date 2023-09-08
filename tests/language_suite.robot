@@ -20,7 +20,7 @@ Fresh Start
     UseModal         On
     PickList         ${${language}.new_lead.salutation}                 Mr.
     TypeText         ${${language}.new_lead.first_name}                 Hidde
-    TypeText         ${${language}.new_lead.last_name}                  Hidde
-    TypeText         ${${language}.new_lead.company}                    Hidde
+    TypeText         ${${language}.new_lead.last_name}                  Visser
+    TypeText         ${${language}.new_lead.company}                    Copado
     PickList         ${${language}.new_lead.lead_status}                Working - Contacted
     ClickText        ${${language}.new_lead.save}                       partial_match=false

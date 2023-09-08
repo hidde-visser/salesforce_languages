@@ -19,7 +19,7 @@ english:
         language: Language
     buttons:
         save: Save
-    Home: Home
+    home: Home
 nederlands:
     app:
         sales: Verkoop
@@ -40,4 +40,4 @@ nederlands:
         language: Language
     buttons:
         save: Save
-    Home: Hoofdpagina
+    home: Hoofdpagina

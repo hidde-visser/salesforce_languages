@@ -175,7 +175,7 @@ Determine and Set Language
 Determine language
     ${nl_current_language}=     IsText                      Profiel weergeven
     ${en_current_language}=     IsText                      View profile
-    # ${fr_current_language}=     IsText                      Profiel weergeven
+    ${fr_current_language}=     IsText                      blah balh
 
     IF                          '${nl_current_language}' == 'True'
         ${current_language}=     Set Variable                nederlands

@@ -13,11 +13,10 @@ ${leads.new_lead}
 *** Test Cases ***
 Fresh Start
     Login
-    ${language}=    Set Variable    English
-    LaunchApp     ${eng.apps.sales}
-    ClickText     ${tabs.leads}
-    ClickText     ${leads.new_lead}
+    ${language}=    Set Variable    english
+    LaunchApp     ${${language}.apps.sales}
+    ClickText     ${${language}.tabs.leads}
+    ClickText     ${${language}.leads.new_lead}
     UseModal      On
-    
     PickList      ${locator_salutation}
 

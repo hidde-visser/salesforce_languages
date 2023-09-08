@@ -15,10 +15,10 @@ Fresh Start
     Home
 
     #Set the application language
-    Determine and Set Language    nederlands
+    Determine and Set Language    english
 
     #Enter a lead
-    ${language}=     Set Variable                nederlands
+    ${language}=     Set Variable                english
     LaunchApp        ${${language}.app.sales}
     ClickText        ${${language}.tabs.leads}
     Sleep            1s

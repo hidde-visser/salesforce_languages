@@ -40,15 +40,21 @@ Create Lead
 Delete Lead via API
     [Documentation]
     [Tags]
-    Authenticate                ${client_id}                ${client_secret}            ${username}    ${password}    #sandbox=True
-    DeleteRecord
-    GetRecord                   Lead                        Visser
-    ${results}=                 QueryRecords                SELECT Id FROM Lead WHERE LastName \= 'Visser'
-    Log                         ${results}
-    ${results_json}             Convert String to JSON      ${results}
+    # #Authenticate
+    # Authenticate                ${client_id}                ${client_secret}            ${username}    ${password}    #sandbox=True
+    
+    # # Get all Visser Records
+    # ${results}=                 QueryRecords                SELECT Id FROM Lead WHERE LastName \= 'Visser'
+    # Log To Console              ${results}
 
-    Delete Record               Lead                        Visser
-
-    FOR                         ${id}                       IN                          ${results}
-        Delete Record           Lead                        ${id}
-    END
+    # # Delete the records
+    # IF  ${results}[totalSize] > 0
+    #     FOR  ${record}  IN  @{results}[records]
+    #         Log To Console  Deleting ${record}[Id]
+    #         Delete Record   Lead  ${record}[Id]
+    #     END
+    # ELSE
+    #     Log            No Records to delete.
+    # END
+    
+    Delete Leads by LastName    Visser

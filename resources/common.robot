@@ -174,6 +174,7 @@ Determine and Set Language
         ${set_language}         Evaluate                    "${set_language}".capitalize()
         DropDown                ${${current_language}.profile.language}                 ${set_language}
         ClickText               ${${current_language}.buttons.save}
+        Sleep                   3s
     END
 
 Determine language

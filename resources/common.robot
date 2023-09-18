@@ -25,6 +25,8 @@ Setup Browser
     SetConfig                   CaseInsensitive             True
 
 End suite
+    Delete Leads by LastName    Visser
+    Delete Leads by LastName    Brown
     Close All Browsers
 
 Login

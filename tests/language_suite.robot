@@ -9,9 +9,11 @@ Suite Teardown       End suite
 
 *** Variables ***
 ${leads.new_lead}
+${client_id}    3MVG9_kZcLde7U5prSAO1r6J3tzCZ3rK6bLahUf49gamQ2HX_E6836OWaD8xSBdzmCv3RNn3hTJ1OUKqaXEDu
+${client_secret}    40DB108FBD2B6A1DAA12B5FED222E2AEC6F5C8AD9CA19E17E31FBD384AF65D98
 
 *** Test Cases ***
-Fresh Start
+Create Lead
     Home
 
     #Set the application language
@@ -33,3 +35,8 @@ Fresh Start
     TypeText         ${${language}.new_lead.company}                    Copado
     PickList         ${${language}.new_lead.lead_status}                Working - Contacted
     ClickText        ${${language}.buttons.save}                       partial_match=false
+
+Delete Lead via API
+    [Documentation]
+    [Tags]
+    Authenticate                ${client_id}                ${client_secret}    ${username}           ${password}     #sandbox=True 

@@ -163,6 +163,7 @@ Determine and Set Language
     END
 
     IF                          '${current_language}' != '${set_language}'
+        Click Until             ${${current_language}.profile.logout}    ${${current_language}.app.profile}    
         ClickText               ${${current_language}.app.profile}
         ClickText               ${${current_language}.profile.settings}                 partial_match=false
         ClickText               ${${current_language}.profile.language_and_time_zone}

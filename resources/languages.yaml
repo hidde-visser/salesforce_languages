@@ -16,11 +16,14 @@ english:
         settings: Settings
         language_and_time_zone: Language & Time Zone
         language: Language
+        logout: Logout
     buttons:
         save: Save
     home: Home
     modal:
         new_lead: New Lead
+    profile:
+        logout: Logout
 
 nederlands:
     app:
@@ -40,6 +43,7 @@ nederlands:
         settings: Instellingen
         language_and_time_zone: Taal en tijdzone
         language: Taal
+        logout: Afmelden
     buttons:
         save: Opslaan
     home: Hoofdpagina

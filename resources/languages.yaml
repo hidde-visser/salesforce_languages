@@ -22,8 +22,6 @@ english:
     home: Home
     modal:
         new_lead: New Lead
-    profile:
-        logout: Logout
 
 nederlands:
     app:

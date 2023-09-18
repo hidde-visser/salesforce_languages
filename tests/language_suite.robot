@@ -11,8 +11,8 @@ Suite Teardown       End suite
 
 *** Variables ***
 ${leads.new_lead}
-${client_id}=    3MVG9_kZcLde7U5prSAO1r6J3tzCZ3rK6bLahUf49gamQ2HX_E6836OWaD8xSBdzmCv3RNn3hTJ1OUKqaXEDu
-${client_secret}=    40DB108FBD2B6A1DAA12B5FED222E2AEC6F5C8AD9CA19E17E31FBD384AF65D98
+# ${client_id}=    3MVG9_kZcLde7U5prSAO1r6J3tzCZ3rK6bLahUf49gamQ2HX_E6836OWaD8xSBdzmCv3RNn3hTJ1OUKqaXEDu
+# ${client_secret}=    40DB108FBD2B6A1DAA12B5FED222E2AEC6F5C8AD9CA19E17E31FBD384AF65D98
 
 *** Test Cases ***
 Create Lead

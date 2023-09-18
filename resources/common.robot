@@ -47,8 +47,9 @@ Home
     ${login_status}=            IsText                      To access this page, you have to log in to Salesforce.                              5
     Run Keyword If              ${login_status}             Login
     ${language}=                Determine language
+    LaunchApp                   ${${language}.app.sales}
     VerifyText                  ${${language}.home}
-
+    
 InsertRandomValue
     [Documentation]             This keyword accepts a character count, suffix, and prefix.
     ...                         It then types a random string into the given field.
@@ -149,7 +150,7 @@ Determine and Set Language
     ...                         And if required it will set the correct language for the test script
     ...                         ${set_language} is the to be set language
     [Arguments]                 ${set_language}
-
+    
     ${nl_current_language}=     IsText                      Profiel weergeven
     ${en_current_language}=     IsText                      View profile
     ${fr_current_language}=     IsText                      this is the french profile

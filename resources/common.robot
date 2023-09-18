@@ -188,3 +188,21 @@ Determine language
     END
     
     [Return]                 ${current_language}
+
+Delete Leads by LastName
+    [Documentation]    Delete Records via Salesforce API.
+    [Arguments]        ${last_name}
+
+    Authenticate       ${client_id}   ${client_secret}   ${username}    ${password}  #sandbox=True
+    
+    Log                Deleting Lead Records by ${last_name}
+    ${res}=            Query Records  query=SELECT Id FROM Lead WHERE LastName \= '${last_name}'
+
+    IF  ${res}[totalSize] > 0
+        FOR  ${record}  IN  @{res}[records]
+            Log To Console  Deleting ${record}[Id]
+            Delete Record   Lead  ${record}[Id]
+        END
+    ELSE
+        Log            No Records to delete.
+    END

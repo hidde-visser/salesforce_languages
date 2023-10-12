@@ -25,7 +25,7 @@ Example Test
     ${language}=                Set Variable                ${language}
     LaunchApp                   ${${language}.app.sales}
     ClickText                   ${${language}.tabs.leads}
-    Sleep                       1s
+    Sleep                       2s
     ClickText                   ${${language}.leads.new_leads}
     UseModal                    On
     PickList                    ${${language}.new_lead.salutation}                      ${salutation}

@@ -51,7 +51,7 @@ Home
     ${language}=                Determine language
     LaunchApp                   ${${language}.app.sales}
     VerifyText                  ${${language}.home}
-    
+
 InsertRandomValue
     [Documentation]             This keyword accepts a character count, suffix, and prefix.
     ...                         It then types a random string into the given field.
@@ -152,7 +152,7 @@ Determine and Set Language
     ...                         And if required it will set the correct language for the test script
     ...                         ${set_language} is the to be set language
     [Arguments]                 ${set_language}
-    
+
     ${nl_current_language}=     IsText                      Profiel weergeven
     ${en_current_language}=     IsText                      View profile
     ${fr_current_language}=     IsText                      this is the french profile
@@ -178,35 +178,38 @@ Determine and Set Language
     END
 
 Determine language
-    [Documentation]    ${current_language} (string): The detected language of the web page. Possible values are "nederlands" for Dutch, "english" for English, and "french" for French.
-    ${en_current_language}=     IsText                      View profile    timeout=5s 
-    ${nl_current_language}=     IsText                      Profiel weergeven   
+    [Documentation]             This keyword is used to determine the current language of a web page by checking the presence of specific text elements in different languages.
+    ...                         It returns the detected language as a result.
+    ...                         ${current_language} (string): The detected language of the web page.
+    ...                         Possible values are "nederlands" for Dutch, "english" for English, and "french" for French.
+    ${en_current_language}=     IsText                      View profile                timeout=5s
+    ${nl_current_language}=     IsText                      Profiel weergeven
     ${fr_current_language}=     IsText                      blah balh
 
     IF                          '${nl_current_language}' == 'True'
-        ${current_language}=     Set Variable                nederlands
+        ${current_language}=    Set Variable                nederlands
     ELSE IF                     '${en_current_language}' == 'True'
-        ${current_language}=     Set Variable                english
+        ${current_language}=    Set Variable                english
     ELSE IF                     '${fr_current_language}' == 'True'
-        ${current_language}=     Set Variable                french
+        ${current_language}=    Set Variable                french
     END
-    
-    [Return]                 ${current_language}
+
+    [Return]                    ${current_language}
 
 Delete Leads by LastName
-    [Documentation]    Delete Records via Salesforce API.
-    [Arguments]        ${last_name}
+    [Documentation]             Delete Records via Salesforce API.
+    [Arguments]                 ${last_name}
 
-    Authenticate       ${client_id}   ${client_secret}   ${username}    ${password}  #sandbox=True
-    
-    Log                Deleting Lead Records by ${last_name}
-    ${res}=            Query Records  query=SELECT Id FROM Lead WHERE LastName \= '${last_name}'
+    Authenticate                ${client_id}                ${client_secret}            ${username}                 ${password}                 #sandbox=True
 
-    IF  ${res}[totalSize] > 0
-        FOR  ${record}  IN  @{res}[records]
-            Log To Console  Deleting ${record}[Id]
-            Delete Record   Lead  ${record}[Id]
+    Log                         Deleting Lead Records by ${last_name}
+    ${res}=                     Query Records               query=SELECT Id FROM Lead WHERE LastName \= '${last_name}'
+
+    IF                          ${res}[totalSize] > 0
+        FOR                     ${record}                   IN                          @{res}[records]
+            Log To Console      Deleting ${record}[Id]
+            Delete Record       Lead                        ${record}[Id]
         END
     ELSE
-        Log            No Records to delete.
+        Log                     No Records to delete.
     END

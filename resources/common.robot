@@ -178,6 +178,7 @@ Determine and Set Language
     END
 
 Determine language
+    [Documentation]    ${current_language} (string): The detected language of the web page. Possible values are "nederlands" for Dutch, "english" for English, and "french" for French.
     ${en_current_language}=     IsText                      View profile    timeout=5s 
     ${nl_current_language}=     IsText                      Profiel weergeven   
     ${fr_current_language}=     IsText                      blah balh

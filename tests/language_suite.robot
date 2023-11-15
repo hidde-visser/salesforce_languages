@@ -31,7 +31,7 @@ Create Lead
     # ClickText                 ${${language}.leads.new_leads}
     UseModal                    On
     PickList                    ${${language}.new_lead.salutation}                      Mr.
-    TypeText                    ${${language}.new_lead.first_name}                      Hidde
+    TypeText                    ${${language}.new_lead.first_name}                      test
     TypeText                    ${${language}.new_lead.last_name}                       Visser
     TypeText                    ${${language}.new_lead.company}                         Copado
     PickList                    ${${language}.new_lead.lead_status}                     Working - Contacted
